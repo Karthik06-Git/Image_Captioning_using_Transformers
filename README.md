@@ -50,37 +50,37 @@ This project implements an **image captioning model** using a **Transformer-base
 
 ## 🔍 Model Architecture
 
-1. **CNN Feature Extractor** (Encoder) – Visual Feature Encoder
-Backbone: Pre-trained VGG16 model from ImageNet.
+1) **CNN Feature Extractor** (Encoder) – Visual Feature Encoder
+- Backbone: Pre-trained VGG16 model from ImageNet.
 
-Role: Extracts high-level features from input images. The fully connected layers of VGG16 are discarded, and the output from the final convolutional layer is retained.
+- Role: Extracts high-level features from input images. The fully connected layers of VGG16 are discarded, and the output from the final convolutional layer is retained.
 
-Output: A fixed-length vector (or feature map) that encodes spatial and semantic information about the image.
+- Output: A fixed-length vector (or feature map) that encodes spatial and semantic information about the image.
 
-Why VGG16? /
+- Why VGG16? \
 Its deep architecture effectively captures hierarchical representations and it is lightweight compared to newer CNNs.
 
-2. Transformer Encoder – Visual Feature Refiner
-Takes the VGG16 image feature vector as input.
+2) Transformer Encoder – Visual Feature Refiner
+- Takes the VGG16 image feature vector as input.
 
-Applies Layer Normalization to stabilize training.
+- Applies Layer Normalization to stabilize training.
 
-Passes features through a Dense Layer to project them into the same dimensional space as the caption embeddings.
+- Passes features through a Dense Layer to project them into the same dimensional space as the caption embeddings.
 
-Processes the features using a Multi-Head Attention layer:
+- Processes the features using a Multi-Head Attention layer:
 
-Helps the model focus on different spatial parts of the image.
+   Helps the model focus on different spatial parts of the image.
 
-Enhances representation by attending to multiple areas simultaneously.
+   Enhances representation by attending to multiple areas simultaneously.
 
-Another Layer Normalization follows to refine output.
+   Another Layer Normalization follows to refine output.
 
-Key Advantage: This enables the model to "look" at different parts of the image while generating each word of the caption.
+- Key Advantage: This enables the model to "look" at different parts of the image while generating each word of the caption.
 
-3. Transformer Decoder – Caption Generator
-Inputs are the tokenized and embedded captions (with positional encoding added to preserve word order).
+3) Transformer Decoder – Caption Generator
+- Inputs are the tokenized and embedded captions (with positional encoding added to preserve word order).
 
-The decoder:
+- The decoder:
 
 Uses Masked Multi-Head Self-Attention to prevent the model from "cheating" (i.e., looking ahead at future words).
 
@@ -88,7 +88,7 @@ Applies Cross-Attention between the encoded image features and embedded caption 
 
 Finally, passes through a Dense Softmax layer to generate a probability distribution over the vocabulary at each timestep.
 
-Output: A sequence of predicted words forming a caption, starting with <start> and ending with <end> token.
+- Output: A sequence of predicted words forming a caption, starting with <start> and ending with <end> token.
 
 ---
 
@@ -109,11 +109,11 @@ Output: A sequence of predicted words forming a caption, starting with <start> a
 
 - **BLEU Score** from `nltk.translate.bleu_score` is used to evaluate the quality of generated captions against the ground truth captions.
 - These scores measure the similarity between the candidate caption and the reference captions using n-grams (sequences of n words).
-- and obtained these scores over Flickr30k dataset :-\
+- and obtained these scores over Flickr30k dataset :- \
    `BLEU-1`: 0.7140 \
    `BLEU-2`: 0.4990 \
    `BLEU-3`: 0.4026 \
-   `BLEU-4`: 0.4408 \
+   `BLEU-4`: 0.4408 
 
 ---
 
