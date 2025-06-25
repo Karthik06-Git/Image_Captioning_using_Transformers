@@ -128,8 +128,8 @@ Output: A sequence of predicted words forming a caption, starting with <start> a
 
 Image:
 
-![example](https://upload.wikimedia.org/wikipedia/commons/3/3e/Flickr_example.jpg)  
-Caption: `"A man is playing soccer in a grassy field."`
+![example](https://storage.googleapis.com/kagglesdsdata/datasets/623329/1111749/Images/flickr30k_images/1000092795.jpg?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=databundle-worker-v2%40kaggle-161607.iam.gserviceaccount.com%2F20250625%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20250625T072346Z&X-Goog-Expires=345600&X-Goog-SignedHeaders=host&X-Goog-Signature=3766215501091e69460fd909430f3e59e16bff7112352104f2d0677d404f8e8f249061ad03dd7032bebf13ac4d109243e3e7c62bc71dc948a075ce8e34b3371be06ca8739d19f465d81a11b48e4336ee818165a3aa82289438e52d0910e67d23cb40c46bb5964a763436bc2fdfd83a2f1fee0919bd2b6384232dabd59dc5fce316185d96e7920ff65017fe4058c029089c68d5bd52d424bf90bbfcd6fe3448b2ebfeacd8f735a9b352055fcf253c3bf0d8219192584b02ae44e3e80f1bfacb65f227d7302a44013f739f96da5c8c3e03ec2176dcf18b448a70300cd3870e31d16fe10d9c05b131c48d595601da1851887d007fb3b93116fc01e42d70de23e003)  
+Caption: `"Two friends enjoy time spent together."`
 
 ---
 
