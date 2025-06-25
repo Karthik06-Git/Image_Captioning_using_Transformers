@@ -60,7 +60,7 @@ This project implements an **image captioning model** using a **Transformer-base
 - Why VGG16? \
 Its deep architecture effectively captures hierarchical representations and it is lightweight compared to newer CNNs.
 
-2) Transformer Encoder – Visual Feature Refiner
+2) **Transformer Encoder** – Visual Feature Refiner
 - Takes the VGG16 image feature vector as input.
 
 - Applies Layer Normalization to stabilize training.
@@ -77,7 +77,7 @@ Its deep architecture effectively captures hierarchical representations and it i
 
 - Key Advantage: This enables the model to "look" at different parts of the image while generating each word of the caption.
 
-3) Transformer Decoder – Caption Generator
+3) **Transformer Decoder** – Caption Generator
 - Inputs are the tokenized and embedded captions (with positional encoding added to preserve word order).
 
 - The decoder:
