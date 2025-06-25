@@ -108,6 +108,12 @@ Output: A sequence of predicted words forming a caption, starting with <start> a
 ## 📈 Evaluation Metric
 
 - **BLEU Score** from `nltk.translate.bleu_score` is used to evaluate the quality of generated captions against the ground truth captions.
+- These scores measure the similarity between the candidate caption and the reference captions using n-grams (sequences of n words).
+- and obtained these scores over Flickr30k dataset :-\
+   `BLEU-1`: 0.7140 \
+   `BLEU-2`: 0.4990 \
+   `BLEU-3`: 0.4026 \
+   `BLEU-4`: 0.4408 \
 
 ---
 
@@ -124,7 +130,7 @@ Output: A sequence of predicted words forming a caption, starting with <start> a
 
 ---
 
-## 🎯 Sample Output
+## 🎯 Sample Image & Caption
 
 Image:
 
@@ -135,6 +141,6 @@ Caption: `"Two friends enjoy time spent together."`
 
 ## 📚 References
 
-- [Flickr30k Dataset](http://shannon.cs.illinois.edu/DenotationGraph/)
-- [Attention is All You Need (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762)
+- [Flickr30k Dataset](https://www.kaggle.com/datasets/adityajn105/flickr30k)
+- [Attention is All You Need (Vaswani et al., 2017)](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)
 - TensorFlow, Keras documentation
