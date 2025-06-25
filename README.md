@@ -27,7 +27,7 @@
 | **Matplotlib, Seaborn** | Visualization |
 | **NLTK**           | BLEU score for evaluating generated captions |
 | **Tqdm**           | Progress bar for loops |
-| **PIL (Pillow)**   | Image loading and processing |
+| **Pickle**         | Serializing and deserializing Python object structures | 
 
 ---
 
