@@ -51,24 +51,24 @@ This project implements an **image captioning model** using a **Transformer-base
 
 ## 🔍 Model Architecture
 
-1) **CNN Feature Extractor** *(Encoder) – Visual Feature Encoder*
-   Backbone: Pre-trained VGG16 model from ImageNet.
+1) **CNN Feature Extractor** *(Encoder) – Visual Feature Encoder* \
+   - Backbone: Pre-trained VGG16 model from ImageNet.
 
-   Role: Extracts high-level features from input images. The fully connected layers of VGG16 are discarded, and the output from the final convolutional layer is retained.
+   - Role: Extracts high-level features from input images. The fully connected layers of VGG16 are discarded, and the output from the final convolutional layer is retained.
 
-   Output: A fixed-length vector (or feature map) that encodes spatial and semantic information about the image.
+   - Output: A fixed-length vector (or feature map) that encodes spatial and semantic information about the image.
 
-   Why VGG16? \
-   Its deep architecture effectively captures hierarchical representations and it is lightweight compared to newer CNNs.
+   - Why VGG16? \
+      Its deep architecture effectively captures hierarchical representations and it is lightweight compared to newer CNNs.
 
-2) **Transformer Encoder** – *Visual Feature Refiner*
-   Takes the VGG16 image feature vector as input.
+2) **Transformer Encoder** – *Visual Feature Refiner* \
+   - Takes the VGG16 image feature vector as input.
 
-   Applies Layer Normalization to stabilize training.
+   - Applies Layer Normalization to stabilize training.
 
-   Passes features through a Dense Layer to project them into the same dimensional space as the caption embeddings.
+   - Passes features through a Dense Layer to project them into the same dimensional space as the caption embeddings.
 
-   Processes the features using a Multi-Head Attention layer:-
+   - Processes the features using a Multi-Head Attention layer:-
 
       Helps the model focus on different spatial parts of the image.
 
@@ -76,12 +76,12 @@ This project implements an **image captioning model** using a **Transformer-base
 
       Another Layer Normalization follows to refine output.
 
-   Key Advantage: This enables the model to "look" at different parts of the image while generating each word of the caption.
+   - Key Advantage: This enables the model to "look" at different parts of the image while generating each word of the caption.
 
-3) **Transformer Decoder** – *Caption Generator*
-   Inputs are the tokenized and embedded captions (with positional encoding added to preserve word order).
+3) **Transformer Decoder** – *Caption Generator* \
+   - Inputs are the tokenized and embedded captions (with positional encoding added to preserve word order).
 
-   The decoder:
+   - The decoder:
 
       Uses Masked Multi-Head Self-Attention to prevent the model from "cheating" (i.e., looking ahead at future words).
 
@@ -89,7 +89,7 @@ This project implements an **image captioning model** using a **Transformer-base
 
       Finally, passes through a Dense Softmax layer to generate a probability distribution over the vocabulary at each timestep.
 
-   Output: A sequence of predicted words forming a caption, starting with <start> and ending with <end> token.
+   - Output: A sequence of predicted words forming a caption, starting with <start> and ending with <end> token.
 
 ---
 
