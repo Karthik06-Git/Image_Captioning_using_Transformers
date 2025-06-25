@@ -1,7 +1,7 @@
 # 🖼️ Image Captioning using Transformers
 
-This project implements an **image captioning model** using a **Transformer-based architecture**. It takes an image as input and generates a meaningful natural language description.\
-“The model integrates a pre-trained CNN (VGG16) for visual feature extraction, followed by a Transformer-based encoder-decoder architecture for sequential caption generation.”
+- This project implements an **image captioning model** using a **Transformer-based architecture**. It takes an image as input and generates a meaningful natural language description.\
+- “The model integrates a pre-trained CNN (VGG16) for visual feature extraction, followed by a Transformer-based encoder-decoder architecture for sequential caption generation.”
 
 > Each image in the dataset is annotated with 5 captions, helping the model learn diverse sentence structures.
 
@@ -51,7 +51,7 @@ This project implements an **image captioning model** using a **Transformer-base
 
 ## 🔍 Model Architecture
 
-1) **CNN Feature Extractor** *(Encoder) – Visual Feature Encoder* \
+1) **CNN Feature Extractor** *(Encoder) – Visual Feature Encoder* 
    - Backbone: Pre-trained VGG16 model from ImageNet.
 
    - Role: Extracts high-level features from input images. The fully connected layers of VGG16 are discarded, and the output from the final convolutional layer is retained.
@@ -61,7 +61,7 @@ This project implements an **image captioning model** using a **Transformer-base
    - Why VGG16? \
       Its deep architecture effectively captures hierarchical representations and it is lightweight compared to newer CNNs.
 
-2) **Transformer Encoder** – *Visual Feature Refiner* \
+2) **Transformer Encoder** – *Visual Feature Refiner* 
    - Takes the VGG16 image feature vector as input.
 
    - Applies Layer Normalization to stabilize training.
@@ -78,7 +78,7 @@ This project implements an **image captioning model** using a **Transformer-base
 
    - Key Advantage: This enables the model to "look" at different parts of the image while generating each word of the caption.
 
-3) **Transformer Decoder** – *Caption Generator* \
+3) **Transformer Decoder** – *Caption Generator* 
    - Inputs are the tokenized and embedded captions (with positional encoding added to preserve word order).
 
    - The decoder:
