@@ -12,6 +12,7 @@
 ### 📊 Dataset
 - **Flickr30k Dataset**: Contains images with five textual descriptions each.
 - Format: CSV file `captions.txt` mapping image file names to their respective captions.
+- [kaggle dataset](https://www.kaggle.com/datasets/adityajn105/flickr30k)
 
 ---
 
