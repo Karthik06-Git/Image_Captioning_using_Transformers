@@ -1,6 +1,6 @@
 # 🖼️ Image Captioning using Transformers
 
-- This project implements an **image captioning model** using a **Transformer-based architecture**. It takes an image as input and generates a meaningful natural language description.\
+- This project implements an **image captioning model** using a **Transformer-based architecture**. It takes an image as input and generates a meaningful natural language description.
 - “The model integrates a pre-trained CNN (VGG16) for visual feature extraction, followed by a Transformer-based encoder-decoder architecture for sequential caption generation.”
 
 > Each image in the dataset is annotated with 5 captions, helping the model learn diverse sentence structures.
